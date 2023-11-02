@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Home = () => {
+
+
+
+const Products = () => {
+
   const [products, setProducts] = useState([]);
   const [addedToCart, setAddedToCart] = useState([]);
 
@@ -9,7 +13,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('https://api.revam.cloud/api/extension/');
-        setProducts(response.data.slice(0, 4));
+        setProducts(response.data.slice(0, 10));
       } catch (err) {
         console.log(err);
       }
@@ -68,4 +72,5 @@ const Home = () => {
   );
 };
 
-export default Home;
+
+export default Products;
